@@ -17,8 +17,8 @@ to handle unexpected pairs.
 
 ## Installation and Initialization
 1. Clone the project
-2. in ./Market-Status-Api-Rest run `npm install`
-3. run `npm start`
+2. inside run `npm install`
+3. inside run `npm start`
 
 ## Unit tests
 1. run `npm test`
