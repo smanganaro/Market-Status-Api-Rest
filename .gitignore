@@ -1,0 +1,7 @@
+# compiled output
+/node_modules
+
+# Logs
+logs
+
+#env should be ignored too. For simplicity and due to the fact that this is for a challenge its not.
