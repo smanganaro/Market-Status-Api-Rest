@@ -34,6 +34,16 @@ async function connect() {
   });
 }
 
+async function disconnect(client) { 
+  try{
+    client.end();
+    logger.info('Disconnected');
+  }catch(err){
+    logger.error('Failed to disconnect', err);
+  }
+  
+}
+
 async function subscribe(client, channel) {
   try {
     await invoke(client, 'subscribe', channel);  
@@ -48,7 +58,8 @@ async function subscribe(client, channel) {
 
 async function unsubscribe(){
   try {
-    await invoke(this.client, 'Unsubscribe', this.channel);  
+    await invoke(this.client, 'Unsubscribe', this.channel); 
+    disconnect(this.client);
     logger.info('Unsubscription to "' + this.channel + '" successful');
   }catch(err){
     logger.error('Unsubscription to "' + this.channel + '" failed: ' + err);
@@ -66,8 +77,6 @@ async function invoke(client, method, ...args) {
       });
   })
 }
-
-
 
 async function messageReceived(message) {
   const data = JSON.parse(message.utf8Data);
