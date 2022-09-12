@@ -22,3 +22,8 @@ to handle unexpected pairs.
 
 ## Unit tests
 1. run `npm test`
+
+
+## Things to consider
+- Pushing .env file for simplicity of configuration. It should be ignored.
+- There are a few improvements that can be done with a retrial system.
